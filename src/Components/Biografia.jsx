@@ -30,22 +30,29 @@ export default function Biografia() {
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-yellow-300">
             Sobre mí
           </h2>
+<p className="text-lg sm:text-xl text-gray-200 mb-4 leading-relaxed">
+  Hola, soy Enrique Vargas, tengo 47 años y cuento con más de 15 años de experiencia en ventas y trato directo con la gente. 
+  Siempre he buscado estrategias de marketing directo para alcanzar objetivos claros de ventas y, ahora, combinando mi experiencia 
+  con el desarrollo web, busco ayudar a pequeños y medianos negocios a impulsar su presencia en línea.
+</p>
 
-          <p className="text-lg sm:text-xl text-gray-200 mb-4 leading-relaxed">
-            Hola, soy Enrique Vargas, tengo 47 años y más de 15 años de
-            experiencia en ventas y trato directo con la gente. He trabajado en
-            marketing directo y ahora, combinando mi experiencia con el
-            desarrollo web, busco ayudar a pequeños y medianos negocios a
-            impulsar su presencia en línea.
-          </p>
+<p className="text-lg sm:text-xl text-gray-200 mb-4 leading-relaxed">
+  ✨ Mi objetivo es acompañarte a entrar al mundo digital, para que conectes con tus clientes y hagas crecer tu negocio de manera 
+  profesional y efectiva. Lo hago de forma cercana y personalizada, como si estuviera hablando directamente contigo.
+</p>
 
-          <p className="text-lg sm:text-xl text-gray-200 leading-relaxed">
-            Mi objetivo es acompañar a emprendedores y personas que aún no se
-            han atrevido a entrar al mundo digital, para que puedan conectar con
-            sus clientes y crecer sus negocios de manera profesional y efectiva.
-            Hago todo esto de manera cercana y personalizada, como si te
-            estuviera hablando directamente a ti.
-          </p>
+<h3 className="text-xl sm:text-2xl font-semibold text-white mt-6 mb-4">
+  🚀  5 Razones para que impulses tu negocio en internet:
+</h3>
+
+<ul className="list-disc list-inside space-y-2 text-lg sm:text-xl text-gray-200 leading-relaxed">
+  <li>🌐 <strong>Página web profesional:</strong> tu carta de presentación 24/7.</li>
+  <li>📱 <strong>Redes sociales (Facebook, Instagram, TikTok):</strong> conecta, genera confianza y atrae nuevos clientes.</li>
+  <li>✉️ <strong>Email marketing:</strong> comunica promociones y fideliza a tus clientes.</li>
+  <li>🔎 <strong>Posicionamiento en Google (SEO y Google Maps):</strong> haz que te encuentren fácilmente.</li>
+  <li>💳 <strong>Tiendas en línea y pasarelas de pago:</strong> vende tus productos o servicios de forma segura y sencilla.</li>
+</ul>
+
 
           <a
             href="#"
