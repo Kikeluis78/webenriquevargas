@@ -10,7 +10,7 @@ import {
   Palette,
   Users,
 } from "lucide-react";
-import Accordion from "../components/Accordion";
+import Accordion from "../Components/Accordion";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -18,6 +18,62 @@ function Precios2() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
+
+  // Configuración de planes (para evitar repetir código)
+  const planes = [
+    {
+      id: 1,
+      titulo: "Tienda Online",
+      icono: "🛒",
+      precio: "Desde $3,999 MXN",
+      gradiente: "from-cyan-400 via-blue-400 to-pink-400",
+      sombra: "shadow-[0_0_25px_rgba(0,255,200,0.3)]",
+      borde: "border-teal-400/40",
+      descripcion: "Todo lo que necesitas para vender en línea de manera profesional y segura.",
+      features: [
+        { icon: <Globe className="w-5 h-5 text-blue-400" />, text: "Dominio y hosting confiable" },
+        { icon: <ShoppingCart className="w-5 h-5 text-green-400" />, text: "Carrito de compras integrado" },
+        { icon: <CreditCard className="w-5 h-5 text-yellow-400" />, text: "Pasarela de pago segura (PayPal, tarjetas, etc.)" },
+        { icon: <Smartphone className="w-5 h-5 text-pink-400" />, text: "Diseño 100% responsive" },
+        { icon: <Package className="w-5 h-5 text-purple-400" />, text: "Gestión de inventario y productos" },
+        { icon: <ShieldCheck className="w-5 h-5 text-teal-400" />, text: "Seguridad SSL y protección de datos" },
+        { icon: <Users className="w-5 h-5 text-orange-400" />, text: "Respuesta más rápida para tus clientes" },
+        { icon: <Palette className="w-5 h-5 text-pink-400" />, text: "Diseño moderno y personalizado" },
+      ],
+      boton: "¡Comprar Plan!",
+    },
+    {
+      id: 2,
+      titulo: "Página Web Personalizada",
+      icono: "💻",
+      precio: "Desde $3,999 MXN",
+      gradiente: "from-orange-400 via-red-400 to-pink-500",
+      sombra: "shadow-[0_0_20px_rgba(255,0,150,0.3)]",
+      borde: "border-pink-400/40",
+      descripcion: "Soluciones web a medida, con funcionalidades avanzadas y diseño único.",
+      features: [
+        { icon: <Palette className="w-5 h-5 text-pink-400" />, text: "Diseño totalmente personalizado" },
+        { icon: <Globe className="w-5 h-5 text-blue-400" />, text: "Optimización SEO avanzada" },
+        { icon: <Smartphone className="w-5 h-5 text-green-400" />, text: "Compatible con todos los dispositivos" },
+        { icon: <Users className="w-5 h-5 text-orange-400" />, text: "Integración con CRM y marketing" },
+        { icon: <ShieldCheck className="w-5 h-5 text-purple-400" />, text: "Seguridad avanzada y backups automáticos" },
+        { icon: <Package className="w-5 h-5 text-yellow-400" />, text: "Funcionalidades especiales según tu negocio" },
+      ],
+      boton: "¡Comprar Plan!",
+    },
+    {
+      id: 3,
+      titulo: "Aplicaciones Android",
+      icono: "📱",
+      precio: "Desde $3,999 MXN",
+      gradiente: "from-cyan-400 via-yellow-200 to-pink-500",
+      sombra: "shadow-[0_0_15px_rgba(0,200,255,0.3)]",
+      borde: "border-cyan-400/40",
+      descripcion: "Desarrollamos apps Android que se integran con tu tienda o página personalizada.",
+      features: [],
+      boton: "¡Cotizar o Comprar!",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-black flex flex-col items-center px-6 py-10 space-y-12">
@@ -28,182 +84,69 @@ function Precios2() {
       >
         <Link
           to="/precios"
-          className="px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 rounded-lg bg-gradient-to-r from-cyan-400 via-blue-500 to-pink-400
- text-black font-bold shadow-lg hover:opacity-95 transition text-center"
+          className="px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 rounded-lg bg-gradient-to-r from-cyan-400 via-blue-500 to-pink-400 text-black font-bold shadow-lg hover:opacity-95 transition text-center"
         >
           🌐 Página Básica
         </Link>
         <Link
           to="/precios2"
-          className="px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 rounded-lg  bg-gradient-to-r from-pink-400 via-yellow-400 to-blue-500
- text-black font-bold shadow-lg hover:opacity-95 transition text-center"
+          className="px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 rounded-lg bg-gradient-to-r from-pink-400 via-yellow-400 to-blue-500 text-black font-bold shadow-lg hover:opacity-95 transition text-center"
         >
           🚀 Precios Pro
         </Link>
       </div>
 
-      {/* Card Tienda Online */}
-      <div
-        className="bg-gray-900/80 backdrop-blur-md rounded-2xl shadow-[0_0_25px_rgba(0,255,200,0.3)] p-6 sm:p-8 max-w-md sm:max-w-lg md:max-w-xl w-full text-center border border-teal-400/40"
-        data-aos="fade-up"
-      >
-        <div className="flex items-center justify-center gap-2 mb-3">
-          <span className="text-2xl sm:text-3xl md:text-4xl">🛒</span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-400 to-pink-400 bg-clip-text text-transparent">
-            Tienda Online
-          </h2>
-        </div>
-
-        <p className="text-gray-300 text-sm sm:text-base mb-6 leading-relaxed">
-          Todo lo que necesitas para vender en línea de manera profesional y
-          segura.
-        </p>
-        <ul className="text-left space-y-3 text-gray-200 text-sm sm:text-base">
-          <li className="flex items-center gap-3">
-            <Globe className="w-5 h-5 text-blue-400" /> Dominio y hosting
-            confiable
-          </li>
-          <li className="flex items-center gap-3">
-            <ShoppingCart className="w-5 h-5 text-green-400" /> Carrito de
-            compras integrado
-          </li>
-          <li className="flex items-center gap-3">
-            <CreditCard className="w-5 h-5 text-yellow-400" /> Pasarela de pago
-            segura (PayPal, tarjetas, etc.)
-          </li>
-          <li className="flex items-center gap-3">
-            <Smartphone className="w-5 h-5 text-pink-400" /> Diseño 100%
-            responsive
-          </li>
-          <li className="flex items-center gap-3">
-            <Package className="w-5 h-5 text-purple-400" /> Gestión de
-            inventario y productos
-          </li>
-          <li className="flex items-center gap-3">
-            <ShieldCheck className="w-5 h-5 text-teal-400" /> Seguridad SSL y
-            protección de datos
-          </li>
-          <li className="flex items-center gap-3">
-            <Users className="w-5 h-5 text-orange-400" /> Respuesta más rápida
-            para tus clientes
-          </li>
-          <li className="flex items-center gap-3">
-            <Palette className="w-5 h-5 text-pink-400" /> Diseño moderno y
-            personalizado
-          </li>
-        </ul>
-
-        {/* Precio */}
-        <div className="mt-8">
-          <p className="text-xl sm:text-2xl md:text-3xl font-bold text-teal-400">
-            Desde $3,999 MXN
-          </p>
-          <p className="text-xs sm:text-sm text-gray-400 mt-1">
-            *Precio único, sin costos ocultos
-          </p>
-        </div>
-        {/* Botón contratar */}
-        <Link
-          to="/contacto"
-          className="mt-6 block w-full px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 bg-gradient-to-r from-cyan-400 via-yellow-200 to-pink-500
-        hover:opacity-95 text-black font-semibold rounded-xl shadow-lg shadow-blue-300/30 transition"
+      {/* Cards dinámicas */}
+      {planes.map((plan) => (
+        <div
+          key={plan.id}
+          className={`bg-gray-900/80 backdrop-blur-md rounded-2xl ${plan.sombra} p-6 sm:p-8 max-w-md sm:max-w-lg md:max-w-xl w-full text-center border ${plan.borde} transition-transform hover:scale-105`}
+          data-aos="fade-up"
         >
-          ¡Comprar Plan!
-        </Link>
-      </div>
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <span className="text-2xl sm:text-3xl md:text-4xl">{plan.icono}</span>
+            <h2
+              className={`text-2xl sm:text-3xl md:text-4xl font-extrabold bg-gradient-to-r ${plan.gradiente} bg-clip-text text-transparent`}
+            >
+              {plan.titulo}
+            </h2>
+          </div>
 
-      {/* Card Página Web Personalizada */}
-      <div
-        className="bg-gray-900/80 backdrop-blur-md rounded-2xl shadow-[0_0_20px_rgba(255,0,150,0.3)] p-6 sm:p-8 max-w-md sm:max-w-lg md:max-w-xl w-full text-center border border-pink-400/40"
-        data-aos="fade-up"
-      >
-        <div className="flex items-center justify-center mb-3">
-          <span className="text-2xl sm:text-3xl md:text-4xl">💻</span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-orange-400 via-red-400 to-pink-500 bg-clip-text text-transparent">
-            Página Web Personalizada
-          </h2>
+          <p className="text-gray-300 text-sm sm:text-base mb-6 leading-relaxed">
+            {plan.descripcion}
+          </p>
+
+          {plan.features.length > 0 && (
+            <ul className="text-left space-y-3 text-gray-200 text-sm sm:text-base">
+              {plan.features.map((f, idx) => (
+                <li key={idx} className="flex items-center gap-3">
+                  {f.icon}
+                  {f.text}
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {/* Precio */}
+          <div className="mt-8">
+            <p className="text-xl sm:text-2xl md:text-3xl font-bold text-teal-400">
+              {plan.precio}
+            </p>
+            <p className="text-xs sm:text-sm text-gray-400 mt-1">
+              *Precio único, sin costos ocultos
+            </p>
+          </div>
+
+          {/* Botón contratar */}
+          <Link
+            to="/contacto"
+            aria-label={`Contratar ${plan.titulo}`}
+            className="mt-6 block w-full px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 bg-gradient-to-r from-cyan-400 via-yellow-200 to-pink-500 hover:opacity-95 text-black font-semibold rounded-xl shadow-lg shadow-blue-300/30 transition"
+          >
+            {plan.boton}
+          </Link>
         </div>
-
-        <p className="text-gray-300 text-sm sm:text-base mb-6 leading-relaxed">
-          Soluciones web a medida, con funcionalidades avanzadas y diseño único.
-        </p>
-        <ul className="text-left space-y-3 text-gray-200 text-sm sm:text-base">
-          <li className="flex items-center gap-3">
-            <Palette className="w-5 h-5 text-pink-400" /> Diseño totalmente
-            personalizado
-          </li>
-          <li className="flex items-center gap-3">
-            <Globe className="w-5 h-5 text-blue-400" /> Optimización SEO
-            avanzada
-          </li>
-          <li className="flex items-center gap-3">
-            <Smartphone className="w-5 h-5 text-green-400" /> Compatible con
-            todos los dispositivos
-          </li>
-          <li className="flex items-center gap-3">
-            <Users className="w-5 h-5 text-orange-400" /> Integración con CRM y
-            marketing
-          </li>
-          <li className="flex items-center gap-3">
-            <ShieldCheck className="w-5 h-5 text-purple-400" /> Seguridad
-            avanzada y backups automáticos
-          </li>
-          <li className="flex items-center gap-3">
-            <Package className="w-5 h-5 text-yellow-400" /> Funcionalidades
-            especiales según tu negocio
-          </li>
-        </ul>
-
-        {/* Precio */}
-        <div className="mt-8">
-          <p className="text-xl sm:text-2xl md:text-3xl font-bold text-teal-400">
-            Desde $3,999 MXN
-          </p>
-          <p className="text-xs sm:text-sm text-gray-400 mt-1">
-            *Precio único, sin costos ocultos
-          </p>
-        </div>
-
-        {/* Botón contratar */}
-        <Link
-          to="/contacto"
-          className="mt-6 block w-full px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 bg-gradient-to-r from-cyan-400 via-yellow-200 to-pink-500
-        hover:opacity-95 text-black font-semibold rounded-xl shadow-lg shadow-blue-300/30 transition"
-        >
-          ¡Comprar Plan!
-        </Link>
-      </div>
-
-      {/* Card pequeña Aplicaciones Android */}
-      <div
-        className="bg-gray-900/80 backdrop-blur-md rounded-xl shadow-[0_0_15px_rgba(0,200,255,0.3)] p-4 max-w-sm w-full text-center border border-cyan-400/40"
-        data-aos="fade-up"
-      >
-        <h3 className="text-xl sm:text-2xl font-bold mb-2 text-teal-400">
-          📱 Aplicaciones Android
-        </h3>
-        <p className="text-gray-300 text-sm sm:text-base">
-          Desarrollamos apps Android que se integran con tu tienda o página
-          personalizada.
-        </p>
-        {/* Precio */}
-        <div className="mt-8">
-          <p className="text-xl sm:text-2xl md:text-3xl font-bold text-teal-400">
-            Desde $3,999 MXN
-          </p>
-          <p className="text-xs sm:text-sm text-gray-400 mt-1">
-            *Precio único, sin costos ocultos
-          </p>
-        </div>
-        {/* Botón contratar */}
-        <Link
-          to="/contacto"
-          className="mt-6 block w-full px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 bg-gradient-to-r from-cyan-400 via-yellow-200 to-pink-500
-        hover:opacity-95 text-black font-semibold rounded-xl shadow-lg shadow-blue-300/30 transition"
-        >
-          ¡Cotizar o Comprar!
-        </Link>
-      </div>
+      ))}
 
       {/* Preguntas Frecuentes */}
       <div
@@ -236,6 +179,10 @@ function Precios2() {
         <Accordion
           question="🔄 ¿Puedo actualizar productos o funcionalidades?"
           answer="Sí, tendrás acceso al panel de administración para cambios ilimitados."
+        />
+        <Accordion
+          question="🛠️ ¿Incluye soporte o mantenimiento?"
+          answer="Sí, incluimos un periodo de soporte inicial. Posteriormente podemos acordar un plan de mantenimiento mensual."
         />
       </div>
     </div>

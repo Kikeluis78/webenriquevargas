@@ -1,22 +1,28 @@
+// src/components/Accordion.jsx
 import React, { useState } from "react";
 
-function Accordion({ question, answer }) {
+export default function Accordion({ question, answer }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-700 py-3">
+    <div className="border-b border-gray-800 py-3">
+      {/* Botón que abre/cierra */}
       <button
         onClick={() => setOpen(!open)}
-        className="flex justify-between items-center w-full text-left text-gray-200 font-medium"
+        className="w-full flex justify-between items-center text-left text-gray-200 font-semibold hover:text-yellow-300 transition-colors focus:outline-none"
       >
         <span>{question}</span>
-        <span className="text-xl text-teal-400">{open ? "−" : "+"}</span>
+        <span className="ml-3 text-yellow-400 text-xl font-bold">
+          {open ? "−" : "+"}
+        </span>
       </button>
+
+      {/* Contenido desplegable */}
       {open && (
-        <p className="mt-2 text-gray-400 text-sm leading-relaxed">{answer}</p>
+        <div className="mt-2 text-gray-400 leading-relaxed transition-all duration-300 ease-in-out">
+          {answer}
+        </div>
       )}
     </div>
   );
 }
-
-export default Accordion;
