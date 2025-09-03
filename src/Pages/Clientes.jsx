@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import ModalConstruccion from "../components/ModalConstruccion";
+import ModalConstruccion from "../Components/ModalConstruccion";
 import Logo from "../Components/Logo";
 export default function Clientes() {
   const clientes = Array.from({ length: 8 }, (_, i) => i + 1);
