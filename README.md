@@ -1,3 +1,4 @@
+
 # MyPortafolio
 
 Este es mi portafolio personal, creado con 💻 y ❤️ para mostrar mis proyectos.
@@ -15,4 +16,7 @@ Clona este repositorio y ejecuta:
 git clone https://github.com/Kikeluis78/Myportafolio.git
 cd Myportafolio
 npm install
-npm run dev
+
+# Myportafolio
+Mi Portafolio , mi presentacion en internet para ofrecer mis serviccios como programador
+>>>>>>> 3ad0e4a1586939c3c9450c93bd89c9aa03096416
