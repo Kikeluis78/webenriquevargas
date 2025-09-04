@@ -85,7 +85,7 @@ function Precios() {
           </li>
           <li className="flex items-center gap-3">
             <CheckCircle className="w-5 h-5 text-teal-400" />
-            Hasta 4 secciones (Inicio, Servicios, Nosotros, Contacto)
+            2 Secciones (Inicio, Servicios, Nosotros, Contacto)
           </li>
         </ul>
 
