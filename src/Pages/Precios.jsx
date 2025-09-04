@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import Accordion from "../Components/Accordion";
 import {
   CheckCircle,
   Globe,
@@ -8,7 +9,7 @@ import {
   Palette,
   ShieldCheck,
 } from "lucide-react";
-import Accordion from "../components/Accordion";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 
